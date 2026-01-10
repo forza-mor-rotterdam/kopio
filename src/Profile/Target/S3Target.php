@@ -15,13 +15,19 @@ class S3Target extends AbstractTarget
         public readonly string $accessKey,
         public readonly string $secret,
         public readonly string $bucket,
-        public readonly string $path
+        public readonly string $path,
+        public readonly bool $usePathStyleEndpoint
     )
     {
     }
 
     public static function fromArray(array $data): self
     {
+        if (isset($data['usePathStyleEndpoint']) === false) {
+            $data['usePathStyleEndpoint'] = true;
+        }
+        $data['usePathStyleEndpoint'] = boolval($data['usePathStyleEndpoint']);
+
         return new self(
             $data['region'],
             $data['version'],
@@ -29,7 +35,8 @@ class S3Target extends AbstractTarget
             $data['accessKey'],
             $data['secret'],
             $data['bucket'],
-            $data['path']
+            $data['path'],
+            $data['usePathStyleEndpoint']
         );
     }
 

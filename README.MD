@@ -78,6 +78,7 @@ Use cron to automate the execution of backups and cleanups.
             secret:
             bucket:
             path:
+            usePathStyleEndpoint: true|false
         azureBlob:
             dsn:
             container:

@@ -42,6 +42,7 @@ class S3 extends AbstractFlysystem
                 'key' => $this->config->accessKey,
                 'secret' => $this->config->secret
             ],
+            'use_path_style_endpoint' => $this->config->usePathStyleEndpoint
         ]);
 
         $adapter = new AwsS3V3Adapter(
