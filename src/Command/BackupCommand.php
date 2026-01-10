@@ -29,6 +29,7 @@ class BackupCommand extends BaseCommand
         $paths = $this->getBackupProfilesFromPath($input->getArgument('path'));
 
         $baseLogger = new Logger($output, $this->logger, []);
+        $baseLogger->info('Start Kopio', ['profilePath' => $input->getArgument('path'), 'profileList' => $paths]);
 
         $fs = new Filesystem();
 
