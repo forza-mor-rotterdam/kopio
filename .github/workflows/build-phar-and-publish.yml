@@ -61,5 +61,5 @@ jobs:
         with:
           files: |
             kopio.phar
-      - name: Deploy to Azure
-        run: azcopy copy "kopio.phar" "https://markeidownloads.blob.core.windows.net/%24web/kopio.phar?${{ secrets.BLOB_SAS_TOKEN }}"
+#           - name: Deploy to Azure
+#             run: azcopy copy "kopio.phar" "https://markeidownloads.blob.core.windows.net/%24web/kopio.phar?${{ secrets.BLOB_SAS_TOKEN }}"
